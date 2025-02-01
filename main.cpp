@@ -122,5 +122,33 @@ int main()
     //{
     //    cout << nums[i] << "\n";
     //}
+
+
+    //// Palindrome Checker
+    //string word;
+    //cout << "Enter a word: ";
+    //cin >> word;
+    //int res = 1;
+    //int i = 0;
+    
+    //while (res == 1 && i < size(word) / 2) {
+    //    res = (word[i] == word[size(word) - i - 1] ? 1 : -1);
+    //    i += 1;
+    //}
+    //cout << ((res == 1) ? "A Palindrome" : "Not a palindrome");
+    
+    
+    //// Count Vowels and Consonants in a string
+    //string word;
+    //string vowel = "aeiouAEIOU";
+    //cout << "Enter a word: ";
+    //cin >> word;
+    //int vowels = 0, consonants = 0;
+    
+    //for (int i = 0; i < size(word); i++)
+    //{   
+    //    (vowel.find(word[i]) < 100) ? vowels++ : consonants++;
+    //}
+    //cout << "Vowels: " << vowels << "\nConsonants: " << consonants;
   return 0;
 }
