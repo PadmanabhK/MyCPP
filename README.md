@@ -1,2 +1,2 @@
 # MyCPP
-Learning C++
+Learning C++ by solving problems😀
