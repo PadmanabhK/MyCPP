@@ -1,5 +1,7 @@
 #include <iostream>
 #include <Set>
+
+using namespace std;
 // Taking Inputs and storing unique values in a set 
 int main() {
     set<int> nums = {};
