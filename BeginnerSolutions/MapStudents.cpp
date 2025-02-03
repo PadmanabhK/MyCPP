@@ -1,5 +1,4 @@
-# Taking Student's name and age and storing it in a map
-
+// Taking Student's name and age and storing it in a map
 #include <iostream>
 #include <Map>
 
