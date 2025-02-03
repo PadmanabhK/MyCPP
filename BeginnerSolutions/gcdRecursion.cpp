@@ -3,6 +3,8 @@
 // Code might throw error - even though I haven't found any
 #include <iostream>
 
+using namespace std;
+
 int gcdFinder(int gcd, int count, int limit, int a, int b) {
     return (count <= limit) ? ((a % count == 0 && b % count == 0) ? gcdFinder(gcd * count, count + 1, limit, a, b) : gcdFinder(gcd, count + 1, limit, a, b)) : gcd;
 }
