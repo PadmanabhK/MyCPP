@@ -1,5 +1,7 @@
 #include <iostream>
 // Fibonacci Series using recursion
+using namespace std;
+
 void printSeries(int i, int num, int op1, int op2) {
     if (i < num) {
         cout << op2 + op1 << "\n";
