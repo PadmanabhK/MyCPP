@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Vector>
 
+using namespace std;
+
 int main() {
     int num, temp, min;
     vector<int> nums = {};
