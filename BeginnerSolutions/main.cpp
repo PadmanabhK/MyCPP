@@ -152,3 +152,13 @@ int main()
     //cout << "Vowels: " << vowels << "\nConsonants: " << consonants;
   return 0;
 }
+
+// NOTES:
+// use size() to get the length of Arrays, not sizeOf()
+// Take Multiple inputes for ex: cin >> a >> b >> c; which is a pain in C;
+// Haven't used format specifiers like %d, %c - so writing code in C++ is easy relatively
+// Most of the syntax is identical to most of the languages
+// Strings can be manipulated
+// usage of const - big W, but still haven't used that many times
+// Ternary operator literally saves several lines of code
+// I don't know whether I should squeeze code again and again?
