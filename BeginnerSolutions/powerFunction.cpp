@@ -1,5 +1,7 @@
 #include <iostream>
 // power function using recursion
+using namespace std;
+
 int powerFunction(int value, int num, int power) {
     return (power > 0) ? powerFunction(value *= num, num, power - 1) : value;
 }
