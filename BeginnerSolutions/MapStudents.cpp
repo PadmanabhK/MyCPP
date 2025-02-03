@@ -2,6 +2,8 @@
 #include <iostream>
 #include <Map>
 
+using namespace std;
+
 int main() {
 	int num, tempAge;
 	string tempName;
