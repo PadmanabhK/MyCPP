@@ -1,4 +1,7 @@
 // Tic-Tac-Toe
+// Draw Logic still isn't implemented
+// Only Player vs. AI mode Available
+// Yet to implement Player vs. Player mode
 
 #include <cstdlib>
 #include <iostream>
