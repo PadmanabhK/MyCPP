@@ -3,65 +3,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Account.h"
 
 using namespace std;
-
-class Account{
-    private:
-        int Account_Number;
-        string userName;
-        float balance;
-        vector<float> transaction_history = {};
-    public:
-        Account(string name) : userName(name) {
-            srand(time(0));
-            Account_Number = rand() % 1000000;
-            cout << "Account - " << name << " was created successfully\n";
-            cout << "Happy Banking - Welcome!\n";
-        };
-        void deposit(float amount){
-            this->balance += amount;
-            transaction_history.push_back(amount);
-            cout << "$ " << amount << " was deposited successfully!\n";
-            cout << "Total Balance: $ " << this->balance << endl;
-        }
-        void withdraw(float amount){
-            if (amount > this->balance) {
-                cout << "Not Enough amount in balance!\n";
-                return;
-            }
-            this->balance -= amount;
-            transaction_history.push_back(amount * -1);
-            cout << "$ " << amount << " was withdrawn successfully!\n";
-            cout << "Remaining Balance: $ " << this->balance << endl;
-        }
-        void AccountInfo(){
-            cout << "***************** ACCOUNT *****************\n";
-            cout << "Username: " << this->userName << endl;
-            cout << "Balance: " << this->balance << endl;
-            cout << "Account Number: " << this->Account_Number << endl;
-            cout << "*********** Transaction History ***********\n";
-            for (float transaction : this->transaction_history) {
-                cout << "$ " << transaction << (transaction > 0 ? " Deposited" : " Withdrawn") << endl;
-            }
-            cout << "*******************************************";
-            cout << endl;
-        }
-        string getName(){
-            return this->userName;
-        }
-        float getBalance(){
-            return this->balance;
-        }
-};
 
 class Bank{
     private:
         vector<Account> Accounts;
-        int indexFinder(string name){
+        int indexFinder(int num){
             int index = 0;
             for (Account account : Accounts) {
-                if (account.getName() == name) {
+                if (account.getAccountNum() == num) {
                     return index;
                 }
                 index += 1;
@@ -72,12 +24,13 @@ class Bank{
         void Choice(int choice){
             int num;
             string name = "";
+            int ac_num;
             float amount;
-            if (choice != 6) {
-                cout << "Enter your name: ";
+            if (choice != 6 && choice != 4) {
+                cout << "Enter Account number: ";
                 cin >> name;
                 if (choice != 4) {
-                    num = indexFinder(name);
+                    num = indexFinder(ac_num);
                     if (num == -1) {
                         cout << "Account was not found! Create one today!!!\n";
                         return;
@@ -90,39 +43,41 @@ class Bank{
             }
             switch (choice) {
                 case 1:
-                    Deposit(name, amount, num);
+                    Deposit(amount, num);
                     break;
                 case 2:
-                    withdraw(name, amount, num);
+                    withdraw(amount, num);
                     break;
                 case 3:
-                    AccountInfo(name, num);
+                    AccountInfo(num);
                     break;
                 case 4:
+                    cout << "Enter your name: ";
+                    cin >> name;
                     createAccount(name);
                     break;
                 case 5:
-                    closeAccount(name, num);
+                    closeAccount(num);
                     break;
                 case 6:
                     AllAccounts();
                     break;
             }
         }
-        void Deposit(string name, float amount, int num){
+        void Deposit(float amount, int num){
             this->Accounts.at(num).deposit(amount);
         }
-        void withdraw(string name, float amount, int num){
+        void withdraw(float amount, int num){
             this->Accounts.at(num).withdraw(amount);
         }
-        void AccountInfo(string name, int num){
+        void AccountInfo(int num){
             this->Accounts.at(num).AccountInfo();
         }
         void createAccount(string name){
             Account *account = new Account(name);
             Accounts.push_back(*account);
         }
-        void closeAccount(string name, int num){
+        void closeAccount(int num){
             this->Accounts.erase(Accounts.begin() + num);
         }
         void AllAccounts(){
