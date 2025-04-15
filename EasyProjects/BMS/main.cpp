@@ -17,9 +17,7 @@ int main(){
         printMenu();
         cout << "Enter your choice: ";
         cin >> choice;
-        if (choice < 0 || choice > 8) {
-            break;
-        }
+        if (choice < 0 || choice > 8) break;
         bank->Choice(choice);
     }
     return 0;
