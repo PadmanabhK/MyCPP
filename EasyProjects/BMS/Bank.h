@@ -84,12 +84,10 @@ class Bank{
                     AllAccounts();
                     break;
                 case 7:
-                    get_interest(num);
+                    if(num[1] == 1) Savings.at(num[0]).getInterest();
                     break;
                 case 8:
-                    for (Saving& save : this->Savings) {
-                        save.InterestChange();
-                    }
+                    for (Saving& save : this->Savings) save.InterestChange();
                     break;
             }
         }
@@ -108,10 +106,5 @@ class Bank{
             }
             cout << "****************************************************\n";
         }
-        void get_interest(int *num){
-            if (num[1] == 1) {
-                this->Savings.at(num[0]).getInterest();
-                return;
-            }
-        }
 };
+
