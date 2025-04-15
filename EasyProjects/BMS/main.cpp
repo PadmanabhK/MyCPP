@@ -1,6 +1,3 @@
-// Basic Bank management system
-// Basic interest_rate for Savings Account is set for 4%
-
 #include <iostream>
 #include "Bank.h"
 
@@ -20,8 +17,10 @@ int main(){
         printMenu();
         cout << "Enter your choice: ";
         cin >> choice;
+        if (choice < 0 || choice > 8) {
+            break;
+        }
         bank->Choice(choice);
     }
     return 0;
 }
-
