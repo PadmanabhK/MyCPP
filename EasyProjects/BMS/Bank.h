@@ -60,23 +60,25 @@ class Bank{
             }
             switch (choice) {
                 case 1:
-                    Deposit(amount, num);
+                    (num[1] == 1) ? this->Savings.at(num[0]).deposit(amount) : this->Accounts.at(num[0]).deposit(amount);
                     break;
                 case 2:
-                    withdraw(amount, num);
+                    (num[1] == 1) ? this->Savings.at(num[0]).withdraw(amount) : this->Accounts.at(num[0]).withdraw(amount);
                     break;
                 case 3:
-                    AccountInfo(num);
+                    (num[1] == 1) ? this->Savings.at(num[0]).AccountInfo() : this->Accounts.at(num[0]).AccountInfo();
                     break;
                 case 4:
                     cout << "Enter your name: ";
                     cin >> name;
                     cout << "Enter type of account (0 - current) (1 - savings): ";
                     cin >> mode;
-                    createAccount(name, mode);
+                    (mode == 1) ? Savings.push_back(Saving(name)) : Accounts.push_back(Account(name, mode));
                     break;
                 case 5:
-                    closeAccount(num);
+                    cout << "Account with number " << ((num[1] == 1) ? Savings.at(num[0]).getAccountNum() : Accounts.at(num[0]).getAccountNum()) << " Is closed!!!\n";
+                    cout << "Your amount in balance will be sent to you of $: " << ((num[1] == 1) ? Savings.at(num[0]).getBalance() : Accounts.at(num[0]).getBalance());
+                    (num[1] == 1) ? *Savings.erase(Savings.begin() + num[0]) : *Accounts.erase(Accounts.begin() + num[0]);
                     break;
                 case 6:
                     AllAccounts();
@@ -85,40 +87,11 @@ class Bank{
                     get_interest(num);
                     break;
                 case 8:
-                    // for (int i =0; i< this->Savings.size(); i++) {
-                    //     this->Savings.at(i).InterestChange();
-                    // }
                     for (Saving& save : this->Savings) {
                         save.InterestChange();
                     }
                     break;
             }
-        }
-        void Deposit(float amount, int* num){
-            (num[1] == 1) ? this->Savings.at(num[0]).deposit(amount) : this->Accounts.at(num[0]).deposit(amount);
-        }
-        void withdraw(float amount, int *num){
-            (num[1] == 1) ? this->Savings.at(num[0]).withdraw(amount) : this->Accounts.at(num[0]).withdraw(amount);
-        }
-        void AccountInfo(int *num){
-            (num[1] == 1) ? this->Savings.at(num[0]).AccountInfo() : this->Accounts.at(num[0]).AccountInfo();
-        }
-        void createAccount(string name, int mode){
-            if (mode == 1) {
-                Saving *sav = new Saving(name);
-                Savings.push_back(*sav);
-            }
-            else{
-                Account *account = new Account(name, mode);
-                Accounts.push_back(*account);
-            }
-        }
-        void closeAccount(int *num){
-            if (num[1] == 1) {
-                this->Savings.erase(Savings.begin() + num[0]);
-                return;
-            }
-            this->Accounts.erase(Accounts.begin() + num[0]);
         }
         void AllAccounts(){
             if (Accounts.size() == 0 && Savings.size() == 0) {
@@ -142,4 +115,3 @@ class Bank{
             }
         }
 };
-
