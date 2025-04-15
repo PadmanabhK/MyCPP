@@ -12,36 +12,33 @@ class Account{
         string userName;
         float balance = 0;
         vector<float> transaction_history = {};
+
+        void changeBalance(float amount, string type){
+            this->balance += (type == "+") ? amount : (amount * -1);
+            this->transaction_history.push_back((type == "+") ? amount : (-1 * amount));
+            cout << "$ " << amount << " was "<< ((type == "+") ? "Deposited" : "Withdrawn") <<" successfully!\n";
+            cout << "Total Balance: $ " << this->balance << endl;
+        }
+
     public:
         Account(string name, int mode) : userName(name) {
             this->is_saving = mode;
-            if (mode == 1) {
-                this->interest_rate = 4.0;
-            }
-            else{
-                this->interest_value = 0;
-                this->interest_rate = 0;
-            }
+            this->interest_rate = (mode == 1) ? 4.0 : 0;
+            this->interest_value = 0;
             srand(time(0));
             Account_Number = rand() % 1000000;
-            cout << "Account - " << name << " with Account number "<< this->Account_Number << " was created successfully\n";
+            cout << ((mode == 0) ? "Current" : "Savings") << " Account - " << name << " with Account number "<< this->Account_Number << " was created successfully\n";
             cout << "Happy Banking - Welcome!\n";
         };
         void deposit(float amount){
-            this->balance += amount;
-            this->transaction_history.push_back(amount);
-            cout << "$ " << amount << " was deposited successfully!\n";
-            cout << "Total Balance: $ " << this->balance << endl;
+            changeBalance(amount, "+");
         }
         void withdraw(float amount){
             if (amount > this->balance) {
                 cout << "Not Enough amount in balance!\n";
                 return;
             }
-            this->balance -= amount;
-            transaction_history.push_back(amount * -1);
-            cout << "$ " << amount << " was withdrawn successfully!\n";
-            cout << "Remaining Balance: $ " << this->balance << endl;
+            changeBalance(amount, "-");
         }
         void InterestChange(){
             if (this->balance > 0) {
@@ -66,7 +63,7 @@ class Account{
             cout << "*******************************************\n";
         }
         void getInterest(){
-            cout << "Interest value of " << this->interest_value << " is received\n";
+            cout << "Interest value of $ " << this->interest_value << " is received\n";
             this->interest_value = 0;
         }
         string getName(){
@@ -78,15 +75,10 @@ class Account{
         int getAccountNum(){
             return this->Account_Number;
         }
-        int getSaving(){
-            return this->is_saving;
-        }
 };
 
 
 class Saving : public Account{
     public:
-        Saving(string name) : Account(name, 1){
-            cout << "Saving account was created\n";
-        }
+        Saving(string name) : Account(name, 1){}
 };
