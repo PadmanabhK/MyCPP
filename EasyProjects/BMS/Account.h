@@ -17,7 +17,6 @@ class Account{
             this->is_saving = mode;
             if (mode == 1) {
                 this->interest_rate = 4.0;
-                this->interest_value = 0;
             }
             else{
                 this->interest_value = 0;
@@ -45,7 +44,10 @@ class Account{
             cout << "Remaining Balance: $ " << this->balance << endl;
         }
         void InterestChange(){
-            this->interest_value = (this->getBalance() > 0 ) ? (this->interest_rate / 100) * this->getBalance(): 0;
+            if (this->balance > 0) {
+                this->interest_value = (this->interest_rate / 100) * this->balance;
+            }
+            // this->interest_value = (this->interest_rate / 100) * this->balance;
             cout << "New Interest is: " << this->interest_value << endl;
         }
         void AccountInfo(){
@@ -62,8 +64,7 @@ class Account{
             for (float transaction : this->transaction_history) {
                 cout << "$ " << transaction << (transaction > 0 ? " Deposited" : " Withdrawn") << endl;
             }
-            cout << "*******************************************";
-            cout << endl;
+            cout << "*******************************************\n";
         }
         void getInterest(){
             cout << "Interest value of " << this->interest_value << " is received\n";
