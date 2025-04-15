@@ -8,10 +8,10 @@
 using namespace std;
 
 class Bank{
-    private:
+    public:
         vector<Account> Accounts;
         vector<Saving> Savings;
-        int years = 0;
+    private:
         int* indexFinder(int num){
             static int nums[2];
             int index = 0;
@@ -85,8 +85,10 @@ class Bank{
                     get_interest(num);
                     break;
                 case 8:
-                    this->years += 1;
-                    for (Saving save : Savings) {
+                    // for (int i =0; i< this->Savings.size(); i++) {
+                    //     this->Savings.at(i).InterestChange();
+                    // }
+                    for (Saving& save : this->Savings) {
                         save.InterestChange();
                     }
                     break;
@@ -138,6 +140,6 @@ class Bank{
                 this->Savings.at(num[0]).getInterest();
                 return;
             }
-            // this->Accounts.at(num[0]).getInterest();
         }
 };
+
