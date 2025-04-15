@@ -1,6 +1,5 @@
 // Basic Bank management system
 // Basic interest_rate for Savings Account is set for 4%
-// However, there's an error where savings account interest is not getting updated/changed
 
 #include <iostream>
 #include "Bank.h"
