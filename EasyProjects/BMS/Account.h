@@ -10,7 +10,7 @@ class Account{
         int is_saving;
         int Account_Number;
         string userName;
-        float balance;
+        float balance = 0;
         vector<float> transaction_history = {};
     public:
         Account(string name, int mode) : userName(name) {
@@ -29,7 +29,7 @@ class Account{
         };
         void deposit(float amount){
             this->balance += amount;
-            transaction_history.push_back(amount);
+            this->transaction_history.push_back(amount);
             cout << "$ " << amount << " was deposited successfully!\n";
             cout << "Total Balance: $ " << this->balance << endl;
         }
@@ -47,7 +47,6 @@ class Account{
             if (this->balance > 0) {
                 this->interest_value = (this->interest_rate / 100) * this->balance;
             }
-            // this->interest_value = (this->interest_rate / 100) * this->balance;
             cout << "New Interest is: " << this->interest_value << endl;
         }
         void AccountInfo(){
