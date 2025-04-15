@@ -1,3 +1,15 @@
+// This is a simple Bank management system
+
+// FEATURES:
+// Creating both Current and Savings Account
+// However, whenever you create an account a unique account number is generated - which you've to keep noted
+// You can perform operations like deposit, withdrawl, closure of account, check for interest (if you've savings account), detailed information about a particular account
+// This operations are enabled by account number
+// However might be hidden bugs in the program which I might not be aware off
+// This is one of the project - So, I'm leaving it to current version as I'll move for my next project
+// But, I'll expand functionalities like encryption by introducing a pin number for each account
+
+
 #include <iostream>
 #include "Bank.h"
 
