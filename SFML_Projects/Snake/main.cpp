@@ -13,7 +13,6 @@
 #include <SFML/Graphics/Text.hpp>
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -49,12 +48,9 @@ int main(){
     text.setPosition(650, 5);
 
     // Snake Body Block
-
-    pmr::vector<sf::RectangleShape> rects;
     sf::RectangleShape rect({25, 25});
     rect.setFillColor(sf::Color::Blue);
     rect.setPosition({100, 100});
-    rects.push_back(rect);
 
     sf::RectangleShape food({25, 25});
     food.setFillColor(sf::Color::Red);
@@ -84,22 +80,17 @@ int main(){
         }
 
         // Detect collision
-        if(rects.at(0).getGlobalBounds().intersects(food.getGlobalBounds())){
+        if(rect.getGlobalBounds().intersects(food.getGlobalBounds())){
             // score += 1;
             text.setString("Score: " + std::to_string(++score));
             food.setPosition(rand() % 700, rand() % 500);
-            // sf::RectangleShape rect1({25, 25});
-            // rect1.setFillColor(sf::Color::Blue);
-            // rect1.setPosition({rect.getPosition()});
-            // window.clear();
-            // window.draw(rect1);
         }
-        rects.at(0).move(x, y);
+        rect.move(x, y);
 
         // Window Refresh
         window.clear();
         window.draw(food);
-        window.draw(rects.at(0));
+        window.draw(rect);
         window.draw(text);
         window.display();
     }
