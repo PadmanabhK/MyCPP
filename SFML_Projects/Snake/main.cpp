@@ -1,17 +1,16 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
-#include <SFML/System/Clock.hpp>
 #include <SFML/System/String.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 #include <cstdlib>
 #include <ctime>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -22,16 +21,15 @@ string positionChanger(float &x, float &y, float x1, float y1, string dir){
     return dir;
 }
 
-void print(float time){
-    std::cout << time << endl;
+bool detected_Collision(sf::RectangleShape &rect){
+    return (rect.getPosition().x <= 0 || rect.getPosition().y <= 0 || rect.getPosition().x >= 800 || rect.getPosition().y >= 600);
 }
 
 int main(){
     srand(time(0));
     int score = 0;
     string heading = "Right";
-    int foodPosX = rand() % 700;
-    int foodPosY = rand() % 500;
+
     float x = .1;
     float y = 0;
 
@@ -52,9 +50,10 @@ int main(){
     rect.setFillColor(sf::Color::Blue);
     rect.setPosition({100, 100});
 
-    sf::RectangleShape food({25, 25});
+    // Food Block
+    sf::CircleShape food(10);
     food.setFillColor(sf::Color::Red);
-    food.setPosition(foodPosX, foodPosY);
+    food.setPosition(rand() % 700, rand() % 500);
     sf::Event event;
 
     // Event Loop
@@ -78,17 +77,24 @@ int main(){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             heading = (heading != "Left") ? heading = positionChanger(x, y, 0.1, 0, "Right") : "Left";
         }
+        if(rect.getPosition().x <= 0 || rect.getPosition().y <= 0 || rect.getPosition().x >= 800 || rect.getPosition().y >= 600){
+            window.close();
+        }
 
-        // Detect collision
+        // Detect collision of Moving body and Foods
         if(rect.getGlobalBounds().intersects(food.getGlobalBounds())){
-            // score += 1;
             text.setString("Score: " + std::to_string(++score));
             food.setPosition(rand() % 700, rand() % 500);
+            sf::RectangleShape rectBlock({25, 25});
+            rectBlock.setFillColor(sf::Color::Blue);
+            rectBlock.setPosition(rect.getPosition().x, rect.getPosition().y);
         }
         rect.move(x, y);
 
+        // Detect Collision of shape with window's borders. If true closes the window, if not clears the window
+        detected_Collision(rect) ? window.close() : window.clear();
+
         // Window Refresh
-        window.clear();
         window.draw(food);
         window.draw(rect);
         window.draw(text);
@@ -98,6 +104,12 @@ int main(){
 }
 
 
+
+
+// int foodPosX = rand() % 700;
+// int foodPosY = rand() % 500;
+
+// food.setPosition(foodPosX, foodPosY);
 
 // if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 //     if (heading != "Down") {
@@ -124,3 +136,8 @@ int main(){
 //         heading = "Right";
 //     }
 // }
+
+// score += 1;
+
+// window.clear();
+
