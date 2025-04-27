@@ -85,9 +85,6 @@ int main(){
         if(rect.getGlobalBounds().intersects(food.getGlobalBounds())){
             text.setString("Score: " + std::to_string(++score));
             food.setPosition(rand() % 700, rand() % 500);
-            sf::RectangleShape rectBlock({25, 25});
-            rectBlock.setFillColor(sf::Color::Blue);
-            rectBlock.setPosition(rect.getPosition().x, rect.getPosition().y);
         }
         rect.move(x, y);
 
