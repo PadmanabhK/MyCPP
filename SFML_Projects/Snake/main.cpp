@@ -7,11 +7,8 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
-#include <cstdlib>
-#include <ctime>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <string>
 
 using namespace std;
 
@@ -42,7 +39,7 @@ int main(){
     sf::Text text;
     text.setFont(font);
     text.setString("Score: " + std::to_string(score));
-    text.setFillColor(sf::Color::Yellow);
+    text.setFillColor(sf::Color::White);
     text.setPosition(650, 5);
 
     // Snake Body Block
@@ -77,9 +74,6 @@ int main(){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             heading = (heading != "Left") ? heading = positionChanger(x, y, 0.1, 0, "Right") : "Left";
         }
-        if(rect.getPosition().x <= 0 || rect.getPosition().y <= 0 || rect.getPosition().x >= 800 || rect.getPosition().y >= 600){
-            window.close();
-        }
 
         // Detect collision of Moving body and Foods
         if(rect.getGlobalBounds().intersects(food.getGlobalBounds())){
@@ -99,7 +93,6 @@ int main(){
     }
     return 0;
 }
-
 
 
 
