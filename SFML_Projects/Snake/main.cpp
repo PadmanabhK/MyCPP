@@ -1,7 +1,5 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/Texture.hpp>
-#include <SFML/System/String.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
