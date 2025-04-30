@@ -1,6 +1,6 @@
 // Taking Student's name and age and storing it in a map
 #include <iostream>
-#include <Map>
+#include <map>
 
 using namespace std;
 
