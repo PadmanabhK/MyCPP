@@ -5,7 +5,13 @@
 
 # If not, Do this:
 # 1) Non-SFML one ( normal cpp file) - add this into run.sh file and run the file
-g++ [filename].cpp -o [filename] && ./[filename]
+if [ ! -f main ] || [ main.cpp -nt main ]; then
+  g++ main.cpp -o main && ./main
+else
+  ./main
+fi
+# However to execute this run.sh file, you should run a command chmod u+x run.sh
+# and then continuously use ./run.sh whenever you wanna run .cpp file
 
 
 
