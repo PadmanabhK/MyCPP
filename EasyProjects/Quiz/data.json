@@ -1,0 +1,302 @@
+[
+  {
+    "question": "Which country has the highest life expectancy?",
+    "options": [
+      "Cincinnati",
+      "Banana Republic",
+      "Hong Kong",
+      "Iron Man"
+    ],
+    "answer": "Hong Kong"
+  },
+  {
+    "question": "What is the most common surname in the United States?",
+    "options": [
+      "Cincinnati",
+      "The Rock",
+      "Bermuda",
+      "Smith"
+    ],
+    "answer": "Smith"
+  },
+  {
+    "question": "Who was the Ancient Greek God of the Sun?",
+    "options": [
+      "Quantum Leap",
+      "Apollo",
+      "SpongeBob",
+      "Neptune"
+    ],
+    "answer": "Apollo"
+  },
+  {
+    "question": "How many minutes are in a full week?",
+    "options": [
+      "10,080",
+      "Iron Man",
+      "Cincinnati",
+      "Neptune"
+    ],
+    "answer": "10,080"
+  },
+  {
+    "question": "Aureolin is a shade of what color?",
+    "options": [
+      "Gotham",
+      "Venus",
+      "Bermuda",
+      "Yellow"
+    ],
+    "answer": "Yellow"
+  },
+  {
+    "question": "How many faces does a Dodecahedron have?",
+    "options": [
+      "12",
+      "Cincinnati",
+      "Tomato Soup",
+      "Banana Republic"
+    ],
+    "answer": "12"
+  },
+  {
+    "question": "What is the 4th letter of the Greek alphabet?",
+    "options": [
+      "Banana Republic",
+      "Blueberry",
+      "Delta",
+      "SpongeBob"
+    ],
+    "answer": "Delta"
+  },
+  {
+    "question": "What company was initially known as \"Blue Ribbon Sports\"?",
+    "options": [
+      "Nike",
+      "Iron Man",
+      "Tokyo Drift",
+      "Mount Doom"
+    ],
+    "answer": "Nike"
+  },
+  {
+    "question": "What art form is described as \"decorative handwriting or handwritten lettering\"?",
+    "options": [
+      "Atlantis",
+      "Blueberry",
+      "Calligraphy",
+      "Cincinnati"
+    ],
+    "answer": "Calligraphy"
+  },
+  {
+    "question": "What software company is headquartered in Redmond, Washington?",
+    "options": [
+      "Blueberry",
+      "Microsoft",
+      "Alpha Centauri",
+      "Tiger Woods"
+    ],
+    "answer": "Microsoft"
+  },
+  {
+    "question": "Where would you be if you were standing on the Spanish Steps?",
+    "options": [
+      "Tomato Soup",
+      "Rome",
+      "Venus",
+      "SpongeBob"
+    ],
+    "answer": "Rome"
+  },
+  {
+    "question": "What city is known as \"The Eternal City\"?",
+    "options": [
+      "The Rock",
+      "Quantum Leap",
+      "Iron Man",
+      "Rome"
+    ],
+    "answer": "Rome"
+  },
+  {
+    "question": "In which country would you find Mount Kilimanjaro?",
+    "options": [
+      "Tiger Woods",
+      "SpongeBob",
+      "Gotham",
+      "Tanzania"
+    ],
+    "answer": "Tanzania"
+  },
+  {
+    "question": "What is the largest Spanish-speaking city in the world?",
+    "options": [
+      "Bermuda",
+      "Poseidon",
+      "Mexico City",
+      "Quantum Leap"
+    ],
+    "answer": "Mexico City"
+  },
+  {
+    "question": "Which country has the most islands?",
+    "options": [
+      "The Rock",
+      "Gotham",
+      "Sweden (270,000)",
+      "Alpha Centauri"
+    ],
+    "answer": "Sweden (270,000)"
+  },
+  {
+    "question": "In Australia, what is commonly known as a bottle-o?",
+    "options": [
+      "Bermuda",
+      "Alpha Centauri",
+      "Gotham",
+      "An off-license/liquor store"
+    ],
+    "answer": "An off-license/liquor store"
+  },
+  {
+    "question": "In which U.S. state is the country's busiest airport located?",
+    "options": [
+      "Atlantis",
+      "Georgia (Hartsfield-Jackson Atlanta International Airport)",
+      "Tomato Soup",
+      "Banana Republic"
+    ],
+    "answer": "Georgia (Hartsfield-Jackson Atlanta International Airport)"
+  },
+  {
+    "question": "Which is the only continent with land in all four hemispheres?",
+    "options": [
+      "Africa",
+      "Iron Man",
+      "Bermuda",
+      "Venus"
+    ],
+    "answer": "Africa"
+  },
+  {
+    "question": "Which river flows through the Grand Canyon?",
+    "options": [
+      "Colorado River",
+      "The Rock",
+      "Gotham",
+      "Tiger Woods"
+    ],
+    "answer": "Colorado River"
+  },
+  {
+    "question": "How many elements are in the periodic table?",
+    "options": [
+      "118",
+      "Tokyo Drift",
+      "Mount Doom",
+      "Bermuda"
+    ],
+    "answer": "118"
+  },
+  {
+    "question": "Which planet in the Milky Way is the hottest?",
+    "options": [
+      "Venus",
+      "Poseidon",
+      "Leonardo",
+      "Gotham"
+    ],
+    "answer": "Venus"
+  },
+  {
+    "question": "Who discovered that the Earth revolves around the sun?",
+    "options": [
+      "Mount Doom",
+      "Nicolaus Copernicus",
+      "Mars",
+      "Tiger Woods"
+    ],
+    "answer": "Nicolaus Copernicus"
+  },
+  {
+    "question": "Which planet has the most moons?",
+    "options": [
+      "Saturn",
+      "Venus",
+      "Neptune",
+      "Blueberry"
+    ],
+    "answer": "Saturn"
+  },
+  {
+    "question": "Which planet is closest to the sun?",
+    "options": [
+      "Venus",
+      "Mercury",
+      "Iron Man",
+      "Banana Republic"
+    ],
+    "answer": "Mercury"
+  },
+  {
+    "question": "Where is the strongest human muscle located?",
+    "options": [
+      "Tomato Soup",
+      "Bermuda",
+      "Jaw",
+      "Alpha Centauri"
+    ],
+    "answer": "Jaw"
+  },
+  {
+    "question": "Which is the only body part that is fully grown from birth?",
+    "options": [
+      "Mars",
+      "Alpha Centauri",
+      "Eyes",
+      "Neptune"
+    ],
+    "answer": "Eyes"
+  },
+  {
+    "question": "How many bones do we have in an ear?",
+    "options": [
+      "3",
+      "Quantum Leap",
+      "Iron Man",
+      "The Rock"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": "What scientific theory proposed that Earth revolves around the sun?",
+    "options": [
+      "Mount Doom",
+      "Cincinnati",
+      "Heliocentrism",
+      "Banana Republic"
+    ],
+    "answer": "Heliocentrism"
+  },
+  {
+    "question": "What is the process by which plants convert sunlight to energy?",
+    "options": [
+      "Poseidon",
+      "Cincinnati",
+      "Photosynthesis",
+      "Tomato Soup"
+    ],
+    "answer": "Photosynthesis"
+  },
+  {
+    "question": "What was the name of the crime boss who was head of the feared Chicago Outfit?",
+    "options": [
+      "Neptune",
+      "Alpha Centauri",
+      "Bermuda",
+      "Al Capone"
+    ],
+    "answer": "Al Capone"
+  }
+]
