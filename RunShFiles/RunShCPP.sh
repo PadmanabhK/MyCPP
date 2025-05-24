@@ -12,3 +12,8 @@ if [ ! -f [file_name] ] || [ [file_name].cpp -nt [file_name] ]; then
     else
         ./[file_name]
     fi
+
+
+# if there are multiple .cpp files to compile
+g++ *.cpp -o main
+# in first if statement
