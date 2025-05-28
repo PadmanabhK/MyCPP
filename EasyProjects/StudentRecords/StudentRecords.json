@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Alice Johnson",
+        "id": 12345,
+        "grade": "A",
+        "course": "Computer Science",
+        "age": 20
+    },
+    {
+        "name": "Bob Martinez",
+        "id": 78900,
+        "grade": "B+",
+        "course": "Electrical Engineering",
+        "age": 22
+    },
+    {
+        "name": "Noah Davis",
+        "id": 14562,
+        "grade": "D",
+        "course": "CS",
+        "age": 19
+    }
+]
